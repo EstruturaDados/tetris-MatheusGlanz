@@ -49,7 +49,7 @@ int filaVazia(Fila *f) {
 // Enfileira (adiciona) uma peça no final da fila
 void enfileirar(Fila *f, Peca p) {
     if (filaCheia(f)) {
-        printf("⚠️  Fila cheia! Não é possível adicionar nova peça.\n");
+        printf("Fila cheia! Não é possível adicionar nova peça.\n");
         return;
     }
     f->elementos[f->fim] = p;
@@ -61,7 +61,7 @@ void enfileirar(Fila *f, Peca p) {
 Peca desenfileirar(Fila *f) {
     Peca removida = {'-', -1}; // Valor padrão caso fila esteja vazia
     if (filaVazia(f)) {
-        printf("⚠️  Fila vazia! Não há peças para jogar.\n");
+        printf("Fila vazia! Não há peças para jogar.\n");
         return removida;
     }
     removida = f->elementos[f->inicio];
@@ -106,7 +106,7 @@ int pilhaVazia(Pilha *p) {
 // Empilha (coloca) uma peça no topo
 void empilhar(Pilha *p, Peca pec) {
     if (pilhaCheia(p)) {
-        printf("⚠️  Pilha cheia! Não é possível reservar mais peças.\n");
+        printf("Pilha cheia! Não é possível reservar mais peças.\n");
         return;
     }
     p->elementos[++p->topo] = pec;
@@ -116,7 +116,7 @@ void empilhar(Pilha *p, Peca pec) {
 Peca desempilhar(Pilha *p) {
     Peca removida = {'-', -1};
     if (pilhaVazia(p)) {
-        printf("⚠️  Pilha vazia! Não há peças reservadas.\n");
+        printf("Pilha vazia! Não há peças reservadas.\n");
         return removida;
     }
     removida = p->elementos[p->topo--];
@@ -190,7 +190,7 @@ int main() {
                 // Jogar a peça (remove da fila)
                 Peca jogada = desenfileirar(&fila);
                 if (jogada.id != -1)
-                    printf("🎮 Peça jogada: [%c %d]\n", jogada.nome, jogada.id);
+                    printf("Peça jogada: [%c %d]\n", jogada.nome, jogada.id);
                 break;
             }
 
@@ -201,7 +201,7 @@ int main() {
                     empilhar(&pilha, reservada);
                     printf("📦 Peça reservada: [%c %d]\n", reservada.nome, reservada.id);
                 } else {
-                    printf("⚠️  Não foi possível reservar a peça.\n");
+                    printf("Não foi possível reservar a peça.\n");
                 }
                 break;
             }
@@ -210,16 +210,16 @@ int main() {
                 // Usar peça reservada (remove do topo da pilha)
                 Peca usada = desempilhar(&pilha);
                 if (usada.id != -1)
-                    printf("🧩 Peça usada: [%c %d]\n", usada.nome, usada.id);
+                    printf("Peça usada: [%c %d]\n", usada.nome, usada.id);
                 break;
             }
 
             case 0:
-                printf("👋 Encerrando o jogo...\n");
+                printf("Encerrando o jogo...\n");
                 break;
 
             default:
-                printf("❌ Opção inválida! Tente novamente.\n");
+                printf("Opção inválida! Tente novamente.\n");
         }
 
         // Após cada ação (exceto sair), gera nova peça e mantém fila cheia
@@ -231,3 +231,4 @@ int main() {
 
     return 0;
 }
+
