@@ -1,0 +1,114 @@
+O que você vai fazer?
+
+
+Implementar um programa em C que simula o gerenciamento de peças no jogo Tetris Stack, utilizando uma fila circular de peças futuras e uma pilha de reserva. Cada peça tem um tipo (como 'I', 'O', 'T', 'L') e um identificador numérico único (id). O jogador poderá visualizar a fila e a pilha, jogar peças, reservar peças para uso posterior e remover peças da reserva.
+
+Requisitos funcionais
+
+
+Seu programa em C deverá:
+
+ 
+
+Inicializar a fila de peças com um número fixo de elementos (por exemplo, 5).
+ 
+Inicializar uma pilha de peças reservadas com capacidade limitada (por exemplo, 3).
+ 
+Seu programa em C também deverá permitir as seguintes ações:
+ 
+
+Jogar uma peça: remove a peça da frente da fila (dequeue).
+ 
+Reservar uma peça: move a peça da frente da fila para o topo da pilha, se houver espaço.
+ 
+Usar uma peça reservada: remove a peça do topo da pilha, simulando seu uso.
+ 
+Exibir o estado atual: mostra as peças na fila e na pilha após cada ação.
+ 
+Atenção: as peças removidas da fila ou da pilha não voltam para o jogo.
+ 
+
+A cada ação, uma nova peça é automaticamente gerada e adicionada ao final da fila, mantendo-a sempre cheia.
+
+
+Atributos das peças
+
+
+Cada peça possui:
+ 
+
+nome: caractere que representa o tipo da peça ('I', 'O', 'T', 'L').
+ 
+id: número inteiro único que representa a ordem de criação da peça.
+ 
+As peças são geradas automaticamente por uma função chamada gerarPeca.
+
+
+Exemplo de saída
+
+
+Estado atual:
+
+
+Fila de peças	[T 0] [O 1] [L 2] [I 3] [I 4]
+Pilha de reserva 	(Topo -> Base): [T 7] [O 6]
+Tabela: Visualização atual da fila de peças e da pilha de reserva.
+Curadoria de TI.
+
+Opções de Ação:
+
+
+Código	 Ação
+1	Jogar peça
+2	Reservar peça
+3	Usar peça reservada
+0	Sair
+Tabela: Comandos para movimentar peças entre a fila e a pilha de reserva.
+Curadoria de TI.
+
+Opção: ___
+
+
+Requisitos não funcionais
+
+
+Observe os seguintes elementos importantes:
+ 
+
+Usabilidade: a saída do programa deve ser clara e fácil de entender, com separação visual entre fila e pilha.
+ 
+Legibilidade: o código deve ser bem organizado, com comentários explicando a lógica utilizada. Utilize nomes de variáveis descritivos.
+ 
+Documentação: comente seu código, explicando o propósito de cada parte.
+
+Simplificações para o nível intermediário
+
+
+O foco aqui está no uso combinado da fila e da pilha. Algumas limitações são:
+ 
+
+O jogador não pode escolher o tipo da peça, pois elas são sempre geradas de forma aleatória.
+ 
+Impossibilidade de trocar diretamente a peça da fila com a da pilha.
+ 
+A fila sempre mantém o tamanho, e a pilha tem um tamanho máximo fixo.
+ 
+O menu é simples, com quatro opções fixas: jogar, reservar, usar peça da reserva e sair.
+
+Conceitos trabalhados
+
+
+Os pontos fundamentais são:
+ 
+
+Fila circular: manipulação eficiente de elementos com reaproveitamento de espaço.
+ 
+Pilha linear: armazenamento em estilo LIFO (último a entrar, primeiro a sair).
+ 
+Structs e arrays: definição e uso de tipos personalizados para representar peças.
+ 
+Entrada e saída de dados: interação com o jogador via terminal.
+ 
+Funções e modularização: separação de responsabilidades no código.
+ 
+Operadores lógicos e condicionais: controle de fluxo para validação de operações e restrições.
